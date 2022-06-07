@@ -16,3 +16,12 @@ BTreeNode* GetLeftSubTree(BTreeNode* bt);
 BTreeNode* GetRightSubTree(BTreeNode* bt);
 void MakeLeftSubTree(BTreeNode* main, BTreeNode* sub);
 void MakeRightSubTree(BTreeNode* main, BTreeNode* sub);
+void PreorderTraverse(BTreeNode* bt);
+void InorderTraverse(BTreeNode* bt);
+void PostorderTraverse(BTreeNode* bt);
+
+BTreeNode* MakeExpTree(string exp);
+int EvaluateExpTree(BTreeNode* bt);
+
+int prec(char op);
+string infixToPostfix(string infix);
