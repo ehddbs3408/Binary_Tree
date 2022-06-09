@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <stack>
 using namespace std;
 
 struct BTreeNode
@@ -23,5 +24,5 @@ void PostorderTraverse(BTreeNode* bt);
 BTreeNode* MakeExpTree(string exp);
 int EvaluateExpTree(BTreeNode* bt);
 
-int prec(char op);
-string infixToPostfix(string infix);
+//int prec(char op);
+//string infixToPostfix(string infix);

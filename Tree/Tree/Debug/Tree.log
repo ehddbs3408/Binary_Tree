@@ -1,7 +1,2 @@
 ﻿  Main.cpp
-  Tree.cpp
-  코드를 생성하고 있습니다...
-C:\Users\USER\Documents\GitHub\Binary_Tree\Tree\Tree\Tree.cpp(77): error C4716: 'MakeExpTree': 값을 반환해야 합니다.
-C:\Users\USER\Documents\GitHub\Binary_Tree\Tree\Tree\Tree.cpp(87): error C4716: 'prec': 값을 반환해야 합니다.
-C:\Users\USER\Documents\GitHub\Binary_Tree\Tree\Tree\Tree.cpp(90): error C4716: 'infixToPostfix': 값을 반환해야 합니다.
-C:\Users\USER\Documents\GitHub\Binary_Tree\Tree\Tree\Tree.cpp(83): error C4716: 'EvaluateExpTree': 값을 반환해야 합니다.
+  Tree.vcxproj -> C:\Users\USER\Documents\GitHub\Binary_Tree\Tree\Debug\Tree.exe

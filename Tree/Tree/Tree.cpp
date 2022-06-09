@@ -72,18 +72,65 @@ void PostorderTraverse(BTreeNode* bt)
 }
 BTreeNode* MakeExpTree(string exp)
 {
-    // 구현해보자!
-    // 처음부터 짜기 많이 어려우면 첨부된 cpp 파일의 주석 부분 내용 채우기~!! 
+    stack<BTreeNode*> stack;
+    int one = 0, two = 0;
+    BTreeNode* node;
+    for (int i = 0; i < exp.length(); i++)
+    {
+        node = MakeBTreeNode();
+        if (isdigit(exp[i]))
+        {
+            SetData(node, exp[i] - '0');
+        }
+        else
+        {
+            SetData(node, exp[i]);
+            MakeRightSubTree(node, stack.top());
+            stack.pop();
+            MakeLeftSubTree(node, stack.top());
+            stack.pop();
+        }
+        stack.push(node);
+    }
+    node = stack.top();
+    stack.pop();
+    return node;
+    
+    
 }
 
 int EvaluateExpTree(BTreeNode* bt)
 {
-    
+    int op1, op2;
+    if (GetLeftSubTree(bt) == NULL&& GetRightSubTree(bt)==NULL)
+    {
+        return GetData(bt);
+    }
+    op1 = EvaluateExpTree(GetLeftSubTree(bt));;
+    op2 = EvaluateExpTree(GetRightSubTree(bt));
+    switch (GetData(bt))
+    {
+    case '+':
+        return op1 + op2;
+        break;
+    case '-':
+        return op1 - op2;
+        break;
+    case '*':
+        return op1 * op2;
+        break;
+    case '/':
+        return op1 / op2;
+        break;
+    default:
+        break;
+    }
+    return 0;
 }
 
-int prec(char op) {
-    // 구현해보자!
-}
-string infixToPostfix(string infix) {
-    // 구현해보자!
-}
+//int prec(char op) {
+//    // 구현해보자!
+//}
+//string infixToPostfix(string infix) {
+//    // 구현해보자!
+//}
